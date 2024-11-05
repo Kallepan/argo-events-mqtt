@@ -22,6 +22,7 @@ spec:
               kind: Workflow
               metadata:
                 generateName: mqtt-workflow-
+                namespace: workflows
               spec:
                 entrypoint: print-some-shit
                 arguments:
