@@ -1,6 +1,10 @@
 # MQTT Argo CI/CD
 
-What you need?
+## What is this?
+
+This is a simple project to demonstrate how to use MQTT to trigger an Argo Workflow in a Kubernetes cluster using Argo Events. The scripts will install an mqtt-broker, argo-workflows, argo-events, and the necessary configurations to make it work. The workflow will be triggered by a message sent to the topic `test` in the mqtt-broker. The workflow will then log the message received and exit gracefully.
+
+## What you need?
 
 - Minikube
 - Helm
