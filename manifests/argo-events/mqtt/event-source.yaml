@@ -14,6 +14,14 @@ spec:
       # A MQTT client ID. If not provided, a random ID will be generated.
       clientId: "2345"
       
+      auth:
+        username:
+          name: mqtt-auth
+          key: username
+        password:
+          name: mqtt-auth
+          key: password
+
       connectionBackoff:
         # duration in nanoseconds, or strings like "2s". following value is 10 seconds
         duration: 10s

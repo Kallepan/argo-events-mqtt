@@ -17,3 +17,4 @@ resources:
 
   - mqtt/event-source.yaml
   - mqtt/sensor.yaml
+  - mqtt/mqtt-auth.yaml
