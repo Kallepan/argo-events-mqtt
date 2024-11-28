@@ -26,4 +26,4 @@ sleep 2
 kubectl apply -k manifests/
 
 
-kubectl port-forward -n emqx svc/emqx-listeners 1883:1883
+kubectl port-forward -n mqtt svc/emqx-listeners 1883:1883
