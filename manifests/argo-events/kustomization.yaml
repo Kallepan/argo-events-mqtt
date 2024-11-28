@@ -15,5 +15,6 @@ resources:
 
   - event-bus.yaml
 
-  - mqtt/event-source.yaml
+  - mqtt/emqx-event-source.yaml
+  - mqtt/mqtt-event-source.yaml 
   - mqtt/sensor.yaml
