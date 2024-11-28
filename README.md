@@ -6,9 +6,9 @@ This is a simple project to demonstrate how to use MQTT to trigger an Argo Workf
 
 ## What you need?
 
-- Minikube
-- Helm
-- A MQTT Client (I use MQTTX)
+- [Minikube](https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Fx86-64%2Fstable%2Fbinary+download)
+- [Helm](https://helm.sh)
+- A [MQTT Client](https://mqttx.app)
 
 ## What to do?
 
