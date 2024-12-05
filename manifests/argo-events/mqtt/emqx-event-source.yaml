@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: EventSource
+metadata:
+  name: emqx
+spec: 
+  mqtt:
+    example:
+      # The listener URL of the MQTT broker running as an internal service in the cluster.
+      url: tcp://emqx-listeners.mqtt.svc.cluster.local:1883
+      # Use this topic to test using a MQTT client.
+      topic: "test"
+      jsonBody: true
+
+      # A MQTT client ID. If not provided, a random ID will be generated.
+      clientId: "2346"
+      
+      connectionBackoff:
+        # duration in nanoseconds, or strings like "2s". following value is 10 seconds
+        duration: 10s
+        # how many backoffs
+        steps: 5
+        # factor to increase on each step.
+        # setting factor > 1 makes backoff exponential.
+        factor: 2
+        jitter: 0.2

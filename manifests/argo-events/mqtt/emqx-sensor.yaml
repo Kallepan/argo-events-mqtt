@@ -1,0 +1,47 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Sensor
+metadata:
+  name: emqx
+spec:
+  template:
+    serviceAccountName: operate-workflow-sa
+  dependencies:
+    # These are the event sources that would trigger the triggers defined in triggers
+    - name: test-dep
+      eventSourceName: emqx
+      eventName: example
+  triggers:
+    - template:
+        # Defines one or multiple actions that need to be triggered
+        name: mqtt-workflow-trigger
+        k8s:
+          operation: create
+          source:
+            resource:
+              apiVersion: argoproj.io/v1alpha1
+              kind: Workflow
+              metadata:
+                generateName: mqtt-workflow-
+                namespace: workflows
+              spec:
+                entrypoint: print-some-shit
+                arguments:
+                  parameters:
+                  - name: message
+                    # value will get overridden by the event payload from test-dep
+                    value: hello world
+                templates:
+                - name: print-some-shit
+                  inputs:
+                    parameters:
+                    - name: message
+                  container:
+                    image: busybox:latest
+                    command: [sh, -c]
+                    args: ["echo {{inputs.parameters.message}}"]
+          parameters:
+            # Take the value from the dependency test-dep and set it as the value of the parameter message
+            - src:
+                dependencyName: test-dep
+                dataKey: body
+              dest: spec.arguments.parameters.0.value

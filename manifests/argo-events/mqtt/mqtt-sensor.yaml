@@ -9,7 +9,7 @@ spec:
     # These are the event sources that would trigger the triggers defined in triggers
     - name: test-dep
       eventSourceName: mqtt
-      eventName: test
+      eventName: example
   triggers:
     - template:
         # Defines one or multiple actions that need to be triggered

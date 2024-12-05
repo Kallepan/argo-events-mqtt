@@ -4,9 +4,9 @@ metadata:
   name: mqtt
 spec:
   mqtt:
-    test:
+    example:
       # The listener URL of the MQTT broker running as an internal service in the cluster.
-      url: tcp://emqx-listeners.mqtt.svc.cluster.local:1883
+      url: tcp://mqtt-broker.mqtt.svc.cluster.local:1883
       # Use this topic to test using a MQTT client.
       topic: "test"
       jsonBody: true
