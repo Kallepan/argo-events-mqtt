@@ -29,6 +29,3 @@ kubectl apply -k manifests/
 
 # Use this command to port-forward the MQTT broker to your local machine
 kubectl port-forward -n mqtt svc/emqx-listeners 1883:1883
-
-# Alternatively port-forward the mqtt deployment instead
-kubectl port-forward -n mqtt svc/mqtt-broker 1883:1883

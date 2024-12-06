@@ -17,5 +17,3 @@ resources:
 
   - mqtt/emqx-event-source.yaml
   - mqtt/emqx-sensor.yaml
-  - mqtt/mqtt-event-source.yaml
-  - mqtt/mqtt-sensor.yaml
